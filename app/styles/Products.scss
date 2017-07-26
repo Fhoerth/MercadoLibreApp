@@ -12,15 +12,17 @@ ol.list {
   }
 }
 
-article.item {
+article {
+  width: 100%;
+
+  @media screen and (min-width:600px) {
+    display: flex;
+  }
 }
 
 figure.thumbnail {
-  float: left;
-
-  width: $image-size;
   height: $image-size;
-
+  text-align: center;
   img {
     width: $image-size;
     height: $image-size;
@@ -30,11 +32,13 @@ figure.thumbnail {
 }
 
 section.description {
-  margin-left: $image-size;
   padding-top: $separator-size-1;
-  padding-left: $separator-size-1;
-
+  width: $col-12;
   font-family: $font-family;
+
+  @media screen and (min-width:600px) {
+    padding-left: $separator-size-1;
+  }
 
   h2 {
     margin-bottom: $separator-size-2;
@@ -58,22 +62,18 @@ section.description {
 
   h1 {
     color: $dark-gray;
-
+    text-align: center;
     font-size: $font-size-large;
+
+    @media screen and (min-width:600px) {
+      text-align: left;
+    }
 
     a {
       text-decoration: none;
 
       color: $dark-gray;
     }
-  }
-
-  div.clear {
-    clear: both;
-
-    height: 1px;
-
-    line-height: 1px;
   }
 }
 

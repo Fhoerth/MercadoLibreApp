@@ -12,7 +12,6 @@ const Item = ({ product }) => (
     <section className={styles.description}>
       <h2 role='description'>$ {product.price} <address>{product.address.state_name}</address></h2>
       <h1><a href={product.permalink} target='_blank' role='link'>{product.title}</a></h1>
-      <div className={styles.clear}/>
     </section>
   </article>
 )
