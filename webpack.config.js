@@ -24,7 +24,7 @@ const baseConfig = {
   output: {
     filename: path.join(config.dirs.dist, 'js', config.dist.jsBundleFileName),
     path: path.resolve(__dirname, config.dirs.public),
-    publicPath: '/'
+    publicPath: `/${(process.env.BASE_HREF || '')}`
   },
   module: {
     loaders: [{
@@ -56,7 +56,7 @@ if (isProduction) {
       }]
     },
     plugins: [
-      new CleanWebpackPlugin([config.dirs.public]),
+      new CleanWebpackPlugin([config.dirs.public], { exclude: ['.git'] }),
       extractCSS,
       new HtmlWebpackPlugin({
         filename: 'index.html',
@@ -105,7 +105,7 @@ if (isProduction) {
     },
     plugins: [
       definePlugin,
-      new CleanWebpackPlugin([config.dirs.public], { exclude: 'vendor' }),
+      new CleanWebpackPlugin([config.dirs.public], { exclude: ['vendor', '.git'] }),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         minify: {
