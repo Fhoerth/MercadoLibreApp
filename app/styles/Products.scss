@@ -15,7 +15,7 @@ ol.list {
 article {
   width: 100%;
 
-  @media screen and (min-width:600px) {
+  @media screen and (min-width: $break-small) {
     display: flex;
   }
 }
@@ -36,7 +36,7 @@ section.description {
   width: $col-12;
   font-family: $font-family;
 
-  @media screen and (min-width:600px) {
+  @media screen and (min-width: $break-small) {
     padding-left: $separator-size-1;
   }
 
@@ -65,7 +65,7 @@ section.description {
     text-align: center;
     font-size: $font-size-large;
 
-    @media screen and (min-width:600px) {
+    @media screen and (min-width: $break-small) {
       text-align: left;
     }
 
