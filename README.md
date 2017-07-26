@@ -4,6 +4,11 @@
 npm install
 cp .env.example .env
 ```
+# Run tests
+
+```bash
+npm run test
+```
 
 # Run in development
 

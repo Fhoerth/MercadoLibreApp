@@ -35,28 +35,3 @@ if (process.env.NODE_ENV === 'production') {
     })
   }
 }
-
-
-
-// if (process.env.NODE_ENV === 'production') {
-//   ReactDOM.render(
-//     <Provider store={store}>
-//       <App />
-//     </Provider>,
-//     rootEl
-//   )
-// } else {
-//   const DevApp = () => (
-//   )
-//
-//   const SuperApp = DevApp()
-//   ReactDOM.render(SuperApp, rootEl)
-//
-//   if (module.hot) {
-//     // const reactDeepForceUpdate = require('react-deep-force-update')
-//     module.hot.accept('./App', () => {
-//       const nextApp = require('./App').default
-//       // reactDeepForceUpdate(nextApp)
-//     })
-//   }
-// }

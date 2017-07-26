@@ -23,7 +23,8 @@ describe('<Index /> Page Component', function () {
     const store = mockStore({
       products: {
         awaitingFetch: false,
-        data: []
+        data: [],
+        categoryPath: []
       },
       router: {
         location: {
