@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 import { mount } from 'enzyme'
 import { take, nth } from 'ramda'
 
-import List from '../../../app/components/Products/List'
+import List, { NoItemsFound } from '../../../app/components/Products/List'
 import Item from '../../../app/components/Products/Item'
 import Spinner from '../../../app/components/common/Spinner'
 
@@ -20,6 +20,24 @@ const mockStore = configureMockStore()
 
 describe('<List />', function () {
   before(tearUp)
+
+  it('should display no items found notification', function () {
+    const store = mockStore({
+      products: {
+        awaitingFetch: false,
+        data: [],
+        pristine: false
+      }
+    })
+
+    const wrapper = mount(
+      <Provider store={store}>
+        <List />
+      </Provider>
+    )
+
+    expect(wrapper).to.contain(<NoItemsFound />)
+  })
 
   it('should display spinner while awaiting products fetch', function () {
     const store = mockStore({
