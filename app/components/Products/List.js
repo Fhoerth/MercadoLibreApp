@@ -7,6 +7,12 @@ import styles from '../../styles/Products.scss'
 import Item from './Item'
 import Spinner from '../common/Spinner'
 
+export const NoItemsFound = () => (
+  <div className={styles.notification} role='description'>
+    <p>No se encontraron resultados para su búsqueda.</p>
+  </div>
+)
+
 class List extends React.Component {
   render () {
     if (this.props.pristine) {
@@ -36,9 +42,7 @@ class List extends React.Component {
       )
     } else {
       return (
-        <div className={styles.notification} role='description'>
-          <p>No se encontraron resultados para su búsqueda.</p>
-        </div>
+        <NoItemsFound />
       )
     }
   }
