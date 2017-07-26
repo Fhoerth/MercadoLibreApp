@@ -55,6 +55,7 @@ describe('Products reducer', function () {
       fetchSuccess: true,
       fetchFailure: false,
       fetchErrorMessage: null,
+      pristine: false,
       categoryPath: []
     })
   })
@@ -71,6 +72,7 @@ describe('Products reducer', function () {
       awaitingFetchMore: false,
       fetchSuccess: false,
       fetchFailure: true,
+      pristine: false,
       fetchErrorMessage: 'Error'
     })
   })
