@@ -15,7 +15,7 @@ module.exports = {
     library: '[name]_lib'
   },
   plugins: [
-    new CleanWebpackPlugin([config.dirs.public]),
+    new CleanWebpackPlugin([config.dirs.public], { exclude: ['.git'] }),
     new webpack.DllPlugin({
       name: '[name]_lib',
       path: path.join(config.dirs.public, config.dirs.vendor, '[name]-manifest.json')
